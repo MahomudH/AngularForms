@@ -1,5 +1,7 @@
 ## To Create Template Drevin Form 
- 1- must import FormsModule
- 2- create Refrance to form tag => #userFrom="ngForm"
- 3- write ngModel to each input elment in form
- 4- must add name attribute to each input elment
+ <ol>
+ <li> must import FormsModule</li>
+ <li> create Refrance to form tag => #userFrom="ngForm"</li>
+ <li> write ngModel to each input elment in form</li>
+ <li> must add name attribute to each input elment</li>
+ <ol>
