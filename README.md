@@ -1,22 +1,49 @@
 ## Angular Forms
-<p>
-In this repository, we will see an example of angular forms
-  </p>
-  <p>
-There are two types of angular forms:</p>
+
+&loz; In this repository, we will see an example of angular forms
+
+&loz; There are two types of angular forms:
 <ol>
 <li> Template-driven forms.</li>
 <li> Reactive forms.</li>
-<hr/>
-  ## To Create Template Drevin Form
-  </ol>
+</ol>
+ <hr/>
+  
+## To Create Template Drevin Form
+
+
  <ol>
  <li> must import FormsModule</li>
  <li> create Refrance to form tag => #userFrom="ngForm"</li>
  <li> write ngModel to each input elment in form</li>
  <li> must add name attribute to each input elment</li>
- <ol>
+ </ol>
 
 
-<li> [ngModel]="userModel.subscribe" use for one way binding => from back to view 
-<li> [(ngModel)]="userModel.name" use for two way binding => from back to view and vice versa
+&raquo; [ngModel]="userModel.subscribe" use for one way binding => from back to view 
+<br>
+&raquo; [(ngModel)]="userModel.name" use for two way binding => from back to view and vice versa
+
+&loz; Track control state and validity
+   <table>
+  <tr>
+    <th>State</th>
+    <th>Class if true</th>
+    <th>Class if false</th>
+  </tr>
+  <tr>
+    <td>The control has been visited</td>
+    <td><code>ng-touched</code></td>
+    <td><code>ng-untouched</code></td>
+  </tr>
+   <tr>
+    <td>The control's value has changed</td>
+    <td><code>ng-dirty</code></td>
+    <td><code>ng-pristine</code></td>
+  </tr>
+   <tr>
+    <td>The control's value is valid</td>
+    <td><code>ng-valid</code></td>
+    <td><code>ng-invalid</code></td>
+  </tr>
+</table>
