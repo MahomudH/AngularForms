@@ -1,4 +1,15 @@
-## To Create Template Drevin Form 
+## Angular Forms
+<p>
+In this repository, we will see an example of angular forms
+  </p>
+  <p>
+There are two types of angular forms:</p>
+<ol>
+<li> Template-driven forms.</li>
+<li> Reactive forms.</li>
+<hr/>
+  ## To Create Template Drevin Form
+  </ol>
  <ol>
  <li> must import FormsModule</li>
  <li> create Refrance to form tag => #userFrom="ngForm"</li>
