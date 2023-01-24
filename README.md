@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## To Create Template Drevin Form 
+ 1- must import FormsModule
+ 2- create Refrance to form tag => #userFrom="ngForm"
+ 3- write ngModel to each input elment in form
+ 4- must add name attribute to each input elment
