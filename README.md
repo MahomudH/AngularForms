@@ -47,3 +47,7 @@
     <td><code>ng-invalid</code></td>
   </tr>
 </table>
+
+<hr/>
+&raquo; when use form valiation as in commit "form validation", this validation can track build in validation so 
+we must add "or" operator for our custom validation
