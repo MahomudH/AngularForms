@@ -14,7 +14,7 @@ export class AppComponent {
     '',
     'Mah1998mod@gmail.com',
     123456789,
-    '',
+    'default',
     'morning',
     true
   );
