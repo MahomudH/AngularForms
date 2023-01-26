@@ -1,23 +1,13 @@
 <div class="container-fluid">
   <h1>Bootstrap Enrollment Form</h1>
-  <form #userForm="ngForm">
-    {{userForm.form.valid }}
-    <!-- {{ userForm.value | json}}
-    <hr>
-    {{ userModel | json}} -->
+  <form #userForm="ngForm" novalidate (ngSubmit)="onSubmit()">
 
     <div class="form-group">
       <label>Name</label>
       <input type="text" required #name="ngModel" class="form-control" [class.is-invalid]="name.invalid && name.touched"
         [(ngModel)]="userModel.name" name="name">
-      <!-- <small class="text-danger" *ngIf="name.touched && name.invalid">Name is required</small> -->
       <small class="text-danger" [class.d-none]="name.untouched || name.valid">Name is required</small>
     </div>
-    <!-- the #name is the ref fro ngModel classes => pristine, dirty, valid, invalid, touched, untouched -->
-    <!-- {{name.pristine}}
-    {{name.valid}}
-    {{name.dirty}}
-    {{name.touched}} -->
 
 
     <div class="form-group">
@@ -36,7 +26,6 @@
       <input type="tel" class="form-control" #phone="ngModel" required pattern="^\d{10}$"
         [class.is-invalid]="phone.invalid && phone.touched" [(ngModel)]="userModel.phone" name="phone"
         [autocomplete]="true">
-      <!-- <small class="text-danger" *ngIf="phone.touched && phone.invalid">Phone number is required and must be 10 digits</small> -->
       <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
         <small class="text-danger" *ngIf="phone.errors['required']">Phone number is required</small>
         <small class="text-danger" *ngIf="phone.errors['pattern']">Phone number must be 10 digits</small>
@@ -97,6 +86,7 @@
 
     </div> -->
 
-    <button [disabled]="userForm.form.invalid || topicHasError" class="btn btn-primary" type="submit">Submit form</button>
+    <button [disabled]="userForm.form.invalid || topicHasError" class="btn btn-primary" type="submit">Submit
+      form</button>
   </form>
 </div>
