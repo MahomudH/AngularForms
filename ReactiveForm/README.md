@@ -22,8 +22,13 @@
  </ol>
  <i>we can use the FormName.value to reach the value of each form cotrol</i>
 
-<ul style="color:red">
+<ul>
  <li>There is two method to set the data in the form</li>
  <li>setValue() => must pass all the form controll values</li>
  <li>TsetValue() => can pass some of form controll values</li>
  </ul>
+
+ 
+ To Use FormBuilder Service
+ 1- Inject FormBuilder Service in constructor
+ 2- user group() method to add the form controll
