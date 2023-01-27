@@ -11,6 +11,7 @@ export class AppComponent {
   topics = ['Angular', 'React', 'Vue'];
   topicHasError = true;
   submitted = false;
+  errorMeg = '';
 
   userModel: User = new User(
     'mahmoud',
@@ -29,15 +30,15 @@ export class AppComponent {
   }
 
   onSubmit() {
-    this.submitted=true;
+    this.submitted = true;
     this._enrollmentService.enroll(this.userModel).subscribe({
-      next: res=>{
-        console.log(res); 
-        console.log("Enrollment Successfully"); 
+      next: (res) => {
+        console.log(res);
+        console.log('Enrollment Successfully');
       },
-      error: err =>{
-        console.log(err);
-      }
-    })
+      error:err=>{
+       this.errorMeg = err.statusText;
+      }  
+    });
   }
 }

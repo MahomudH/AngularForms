@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <h1>Bootstrap Enrollment Form</h1>
-
+<div class="alert alert-danger" *ngIf="errorMeg">
+  {{errorMeg}}
+</div>
   <form #userForm="ngForm" *ngIf="!submitted; else submitTemplate" novalidate (ngSubmit)="onSubmit()">
 
     <div class="form-group">
