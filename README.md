@@ -66,3 +66,15 @@ we must add "or" operator for our custom validation
    <li>run the command "node server"</li>
  </ol>
 
+<i>
+<h4><strong>Summary</strong></h4>
+<ul>
+<li>create form tempalte</li>
+<li>bind data with model</li>
+<li>perform validation</li>
+<li>provide visual feedback</li>
+<li>display error message</li>
+<li>post the form data to a server</li>
+<li>receive the response</li>
+<li>handler any error</li>
+</ul></i>
