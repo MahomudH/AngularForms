@@ -9,3 +9,15 @@
 <li>Dynamic validation</li>
 <li>Unit test</li>
 </ol>
+
+## To Create Template Drevin Form
+ <ol>
+ <li> must import ReactiveFormsModule</li>
+ <li> create FormGroup in .ts file</li>
+ <li> associate the model with the view "HTML form"</li>
+    <ol style="list-style-type:upper-roman">
+    <li>add [FormGroup]="name of form group"</li>  
+    <li>add formControlName for each input in the form</li>  
+    </ol>
+ </ol>
+ <i>we can use the FormName.value to reach the value of each form cotrol</i>
