@@ -4,14 +4,27 @@
 
     <div class="form-group">
       <label>Username</label>
-      <input [class.is-invalid]="username?.touched && username?.invalid"
-        formControlName="username" type="text" class="form-control">
-        <!-- <small *ngIf="username?.touched && username?.invalid" class="text-danger">Username is required</small> -->
-        <div *ngIf="username?.touched && username?.invalid">
-          <small *ngIf="username?.errors?.['required']" class="text-danger">Username is required</small>
-          <small *ngIf="username?.errors?.['minlength']" class="text-danger">Username must be at least 3 character</small>
-          <small *ngIf="username?.errors?.['forbiddenName']" class="text-danger">{{username?.errors?.['forbiddenName'].value}} username is not allowed</small>
-        </div>
+      <input [class.is-invalid]="username?.touched && username?.invalid" formControlName="username" type="text"
+        class="form-control">
+      <!-- <small *ngIf="username?.touched && username?.invalid" class="text-danger">Username is required</small> -->
+      <div *ngIf="username?.touched && username?.invalid">
+        <small *ngIf="username?.errors?.['required']" class="text-danger">Username is required</small>
+        <small *ngIf="username?.errors?.['minlength']" class="text-danger">Username must be at least 3 character</small>
+        <small *ngIf="username?.errors?.['forbiddenName']"
+          class="text-danger">{{username?.errors?.['forbiddenName'].value}} username is not allowed</small>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label>Email</label>
+      <input formControlName="email" [class.is-invalid]="email?.invalid && email?.touched" type="email" class="form-control">
+      <small class="text-danger" [class.d-none]="email?.valid || email?.untouched">Email is required</small>
+    </div>
+
+    <div class="form-check mb-3">
+      <input class="form-check-input" formControlName="subscribe" type="checkbox">
+      <label class="form-check-label">Send me promotional offers</label>
     </div>
 
     <div class="form-group">
@@ -21,7 +34,8 @@
 
     <div class="form-group">
       <label>Confirm Password</label>
-      <input [class.is-invalid]="registraionForm.errors?.['Mismatch']" formControlName="confirmPassword" type="password" class="form-control">
+      <input [class.is-invalid]="registraionForm.errors?.['Mismatch']" formControlName="confirmPassword" type="password"
+        class="form-control">
       <small class="text-danger" *ngIf="registraionForm.errors?.['Mismatch']">Password not match</small>
     </div>
 

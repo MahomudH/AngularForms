@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { forbiddenNameValidator } from './shared/user-name.validators';
 import { PasswordValidator } from './shared/password.validators';
 
@@ -8,33 +8,55 @@ import { PasswordValidator } from './shared/password.validators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  registraionForm: FormGroup;
+
   get username() {
     return this.registraionForm.get('username');
   }
 
+  get email() {
+    return this.registraionForm.get('email');
+  }
+
   constructor(private fb: FormBuilder) {}
 
-  registraionForm = this.fb.group(
-    {
-      username: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          forbiddenNameValidator(/password/),
+  ngOnInit(): void {
+    this.registraionForm = this.fb.group(
+      {
+        username: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(3),
+            forbiddenNameValidator(/password/),
+          ],
         ],
-      ],
-      password: [],
-      confirmPassword: [],
-      address: this.fb.group({
-        city: [],
-        state: [],
-        postalCode: [],
-      }),
-    },
-    { validator: PasswordValidator }
-  );
+        email: [],
+        subscribe: [false],
+        password: [],
+        confirmPassword: [],
+        address: this.fb.group({
+          city: [],
+          state: [],
+          postalCode: [],
+        }),
+      },
+      { validator: PasswordValidator }
+    );
+
+    this.registraionForm
+      .get('subscribe')
+      ?.valueChanges.subscribe((checkedValue) => {
+        const email = this.registraionForm.get('email');
+        if (checkedValue) {
+          email?.setValidators(Validators.required);
+        } else {
+          email?.clearValidators();
+        }
+        email?.updateValueAndValidity();
+      });
+  }
 
   loadAPIData() {
     this.registraionForm.patchValue({
