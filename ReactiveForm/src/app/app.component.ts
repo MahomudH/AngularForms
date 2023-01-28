@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,15 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
+  get username(){
+    return this.registraionForm.get('username');
+  }
+
   constructor(private fb: FormBuilder) {}
 
   registraionForm = this.fb.group({
-    usernmae: ['Mahmoud'],
+    username: ['',[Validators.required,Validators.minLength(3)]],
     password: [],
     confirmPassword: [],
     address: this.fb.group({
@@ -23,7 +28,7 @@ export class AppComponent {
   
   loadAPIData() {
     this.registraionForm.patchValue({
-      usernmae: 'Ahmed',
+      username: 'Ahmed',
       password: '123456',
       confirmPassword: '123456',
       address: {
@@ -32,7 +37,7 @@ export class AppComponent {
     });
 
     // this.registraionForm.setValue({
-    //   usernmae: 'Ahmed',
+    //   username: 'Ahmed',
     //   password: '123456',
     //   confirmPassword: '123456',
     //   address: {
